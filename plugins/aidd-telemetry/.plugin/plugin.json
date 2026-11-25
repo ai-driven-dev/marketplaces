@@ -1,0 +1,21 @@
+{
+  "name": "aidd-telemetry",
+  "description": "Measurement: counts the tokens of Claude Code and Codex sessions per task, ticket, model, tool and day, locally. Opt in with the 00-init skill; ask with 01-usage.",
+  "version": "0.5.0",
+  "author": {
+    "name": "AI-Driven Dev",
+    "url": "https://github.com/ai-driven-dev"
+  },
+  "homepage": "https://ai-driven.dev",
+  "repository": "https://github.com/ai-driven-dev/framework",
+  "license": "MIT",
+  "keywords": [
+    "telemetry",
+    "measurement"
+  ],
+  "skills": [
+    "./skills/00-init",
+    "./skills/01-usage"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

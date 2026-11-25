@@ -1,0 +1,67 @@
+{
+  "name": "aidd-framework",
+  "metadata": {
+    "description": "Official plugin marketplace for the AI-Driven Development framework",
+    "version": "5.14.0",
+    "pluginRoot": "./plugins"
+  },
+  "owner": {
+    "name": "AI-Driven Dev"
+  },
+  "plugins": [
+    {
+      "name": "aidd-context",
+      "source": "aidd-context",
+      "description": "Knowledge production: project bootstrap, project init, generation of context artifacts (skills, agents, rules, commands, hooks), mermaid diagrams, learn, discovery",
+      "version": "2.11.0"
+    },
+    {
+      "name": "aidd-dev",
+      "source": "aidd-dev",
+      "description": "Code transformation: plan, implement, assert, audit, review, test, refactor, debug, for-sure.",
+      "version": "2.8.0"
+    },
+    {
+      "name": "aidd-vcs",
+      "source": "aidd-vcs",
+      "description": "External artifacts: commit, pull-request, release-tag, issue-create",
+      "version": "2.5.1"
+    },
+    {
+      "name": "aidd-pm",
+      "source": "aidd-pm",
+      "description": "Product backlog artifacts, refinement, Product Briefs, Epics, User Stories, Tasks, Spikes, Defects, requirements, and specs.",
+      "version": "2.6.1"
+    },
+    {
+      "name": "aidd-orchestrator",
+      "source": "aidd-orchestrator",
+      "description": "Orchestration: synchronous SDLC pipeline, async issue-to-PR automation, and product backlog. Hosts the generic agents.",
+      "version": "2.5.0"
+    },
+    {
+      "name": "aidd-refine",
+      "source": "aidd-refine",
+      "description": "Meta-cognition: refine input through brainstorming, refine output through challenge, blind-spot scanning, and fact-checking.",
+      "version": "3.2.0"
+    },
+    {
+      "name": "aidd-ui",
+      "source": "aidd-ui",
+      "description": "ALPHA, not ready for use. UI and UX concern: design, review, and improve frontend interfaces.",
+      "version": "0.3.0-alpha.0"
+    },
+    {
+      "name": "aidd-telemetry",
+      "source": "aidd-telemetry",
+      "description": "Measurement: counts the tokens of Claude Code and Codex sessions per task, ticket, model, tool and day, locally. The hooks ask for a task on plain node; its two skills reach the `aidd` CLI to turn it on and answer.",
+      "version": "0.5.0"
+    },
+    {
+      "name": "aidd-qa",
+      "source": "aidd-qa",
+      "description": "Acceptance QA: validates observable behavior against acceptance criteria and records reviewer evidence. Browser is the only supported interface today.",
+      "version": "1.1.0"
+    }
+  ]
+}

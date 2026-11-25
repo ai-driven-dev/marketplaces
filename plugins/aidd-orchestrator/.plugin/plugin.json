@@ -1,0 +1,32 @@
+{
+  "name": "aidd-orchestrator",
+  "description": "Orchestrates the synchronous SDLC pipeline, async issue-to-PR automation, and the product backlog. Hosts the generic agents.",
+  "version": "2.5.0",
+  "author": {
+    "name": "AI-Driven Dev",
+    "url": "https://github.com/ai-driven-dev"
+  },
+  "homepage": "https://ai-driven.dev",
+  "repository": "https://github.com/ai-driven-dev/framework",
+  "license": "MIT",
+  "keywords": [
+    "orchestration",
+    "sdlc",
+    "async",
+    "pipeline",
+    "pull-request",
+    "automation",
+    "backlog"
+  ],
+  "agents": [
+    "./agents/executor.md",
+    "./agents/explorer.md",
+    "./agents/reviewer.md",
+    "./agents/validator.md"
+  ],
+  "skills": [
+    "./skills/00-async-dev",
+    "./skills/01-sdlc",
+    "./skills/02-backlog"
+  ]
+}
