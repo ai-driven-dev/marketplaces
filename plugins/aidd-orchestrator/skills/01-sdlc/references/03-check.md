@@ -1,0 +1,84 @@
+# 03 - Check
+
+## Behavior
+
+Use a fresh agent for each step:
+
+- **Validate the committed candidate** with the `validator` agent, against the contract, criteria, and mandatory checks.
+- **Review quality and coherence** with the `reviewer` agent once validation passes: it runs `/aidd-dev:05-review` on the code and relevancy axes with the acceptance evidence.
+- **Challenge the outcome** after review clears: run `/aidd-refine:02-challenge` to verify that it is trustworthy and serves the user.
+
+## Findings
+
+A review or validation finding is routed by what it is about. A refusal the user gives at a pause is not one of these: `mode.md` routes that by artifact.
+
+- Product or contract findings are the next Frame source.
+- Independent implementation findings go through Batch; dependent repairs stay together in Deliver.
+- Re-enter Check after every new candidate.
+- Once the review has cleared, only a finding that contradicts the contract reopens a zone: carry any other onto the request as a note.
+- A finding already acted on is never routed twice. Repaired or not, it is a decision that requires user authority, and no request opens until that arrives.
+
+## Handoff
+
+- Commit whatever this zone wrote, then open the draft pull request when no actionable finding remains.
+
+```mermaid
+---
+title: Check and challenge independently
+---
+flowchart TD
+  subgraph ReviewStage["Review independently"]
+    direction TB
+    Contract["$contract"]
+    Plan["$plan"]
+    CommittedCandidate["$committed_candidate"]
+    ValidationReports["$validation_reports"]
+    Validator(["validator agent"])
+    Reviewer(["reviewer agent: /aidd-dev:05-review"])
+  end
+
+  subgraph ChallengeStage["Challenge the outcome"]
+    direction TB
+    Challenge["/aidd-refine:02-challenge"]
+  end
+
+  subgraph RouteStage["Route the result"]
+    direction TB
+    Findings["$findings"]
+    Frame["01 Frame"]
+    Batch["/aidd-dev:10-batch"]
+    Deliver["02 Deliver"]
+  end
+
+  subgraph ShipStage["Ship the reviewed candidate"]
+    direction TB
+    PullRequest["/aidd-vcs:02-pull-request"]
+    PullRequestUrl["$pull_request_url"]
+  end
+
+  Contract --> Validator
+  Plan --> Validator
+  CommittedCandidate --> Validator
+  ValidationReports --> Validator
+  Validator -- "All criteria pass with evidence." --> Reviewer
+  Validator -- "Fail or blocked." --> Findings
+  Reviewer -- "Return actionable review findings." --> Findings
+  Reviewer -- "When the review clears, challenge the outcome." --> Challenge
+  Challenge -- "Return actionable challenge findings." --> Findings
+  Challenge -- "When the outcome is trustworthy, open the draft pull request." --> PullRequest
+  Findings -- "Use product findings as the next Frame source." --> Frame
+  Findings -- "Repair independent implementation findings in parallel." --> Batch
+  Findings -- "Repair dependent implementation findings together." --> Deliver
+  Batch --> Deliver
+  PullRequest --> PullRequestUrl
+
+  classDef skill fill:#DBEAFE,stroke:#2563EB,color:#1E3A8A,stroke-width:2px
+  classDef agent fill:#F3E8FF,stroke:#9333EA,color:#581C87,stroke-width:2px
+  classDef artifact fill:#DCFCE7,stroke:#16A34A,color:#14532D,stroke-width:2px
+  classDef zone fill:#F1F5F9,stroke:#64748B,color:#0F172A,stroke-width:2px
+
+  class Challenge,Batch,PullRequest skill
+  class Reviewer,Validator agent
+  class Contract,Plan,CommittedCandidate,ValidationReports,Findings,PullRequestUrl artifact
+  class Frame,Deliver zone
+```
