@@ -1,0 +1,19 @@
+{
+  "name": "aidd-qa",
+  "description": "Acceptance QA: validates observable behavior against acceptance criteria and records reviewer evidence. Use when a reviewed candidate needs evidence that it meets its acceptance criteria. Do NOT use for diff review, unit or integration tests, or fixing the application.",
+  "version": "1.1.0",
+  "homepage": "https://ai-driven.dev",
+  "repository": "https://github.com/ai-driven-dev/framework",
+  "license": "MIT",
+  "author": {
+    "name": "AI-Driven Dev",
+    "url": "https://github.com/ai-driven-dev"
+  },
+  "keywords": [
+    "qa",
+    "acceptance",
+    "browser",
+    "evidence"
+  ],
+  "skills": "./skills"
+}

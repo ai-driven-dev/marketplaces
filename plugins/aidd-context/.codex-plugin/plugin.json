@@ -1,0 +1,22 @@
+{
+  "name": "aidd-context",
+  "description": "Knowledge production: project bootstrap, project init, generation of context artifacts (skills, agents, rules, commands, hooks), mermaid diagrams, learn, explore, recipe how-to sheets",
+  "version": "2.11.0",
+  "homepage": "https://ai-driven.dev",
+  "repository": "https://github.com/ai-driven-dev/framework",
+  "license": "MIT",
+  "author": {
+    "name": "AI-Driven Dev",
+    "url": "https://github.com/ai-driven-dev"
+  },
+  "keywords": [
+    "context",
+    "bootstrap",
+    "explore",
+    "skills",
+    "mermaid",
+    "onboard"
+  ],
+  "skills": "./skills",
+  "hooks": "./hooks/hooks.json"
+}

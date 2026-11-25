@@ -1,0 +1,22 @@
+{
+  "name": "aidd-vcs",
+  "description": "External artifacts: repo-init, commit, pull-request, release-tag, issue-create, resolve-conflict",
+  "version": "2.5.1",
+  "homepage": "https://ai-driven.dev",
+  "repository": "https://github.com/ai-driven-dev/framework",
+  "license": "MIT",
+  "author": {
+    "name": "AI-Driven Dev",
+    "url": "https://github.com/ai-driven-dev"
+  },
+  "keywords": [
+    "git",
+    "repo-init",
+    "commit",
+    "pull-request",
+    "release",
+    "version-control",
+    "conflict-resolution"
+  ],
+  "skills": "./skills"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "aidd-refine",
+  "description": "Meta-cognition: refine input through brainstorming, refine output through challenge, inspect blind spots and facts, and review conversation efficiency.",
+  "version": "3.2.0",
+  "homepage": "https://ai-driven.dev",
+  "repository": "https://github.com/ai-driven-dev/framework",
+  "license": "MIT",
+  "author": {
+    "name": "AI-Driven Dev",
+    "url": "https://github.com/ai-driven-dev"
+  },
+  "keywords": [
+    "brainstorm",
+    "challenge",
+    "fact-check",
+    "review-conversation",
+    "meta-cognition",
+    "refinement"
+  ],
+  "skills": "./skills"
+}

@@ -1,0 +1,59 @@
+---
+name: '01-sdlc'
+description: 'Orchestrates a request from framing to a draft pull request, autonomous or supervised, isolating implementation, independent review, and final outcome challenge. Use when the user wants to deliver a change end to end. Not for one step.'
+---
+
+# Skill: sdlc
+
+## Behavior
+
+Decide the mode as `mode.md` says, then read only it and the current zone's reference. Verify that every named provider is installed before calling it. A zone that cannot proceed stops the run and says what it would take to resume.
+
+Delegate to the agent each zone names, by its role, so every run delegates the same way; without it, give the same brief to the host's default subagent. Parallelize independent work when it is faster. Repeat the responsible zone when delegated work returns an actionable gap.
+
+```mermaid
+---
+title: SDLC orchestration
+---
+flowchart TD
+  subgraph FrameStage["01 Frame"]
+    direction TB
+    Request["$request"]
+    Frame["01 Frame<br/>interactive: pause on the contract"]
+  end
+
+  subgraph DeliverStage["02 Deliver"]
+    direction TB
+    Deliver["02 Deliver<br/>interactive: pause on the plan"]
+  end
+
+  subgraph CheckStage["03 Check"]
+    direction TB
+    Check["03 Check<br/>interactive: pause on the outcome"]
+    PullRequest["$pull_request"]
+  end
+
+  Request --> Frame
+  Frame --> Deliver
+  Deliver --> Check
+  Check --> PullRequest
+
+  classDef artifact fill:#DCFCE7,stroke:#16A34A,color:#14532D,stroke-width:2px
+  classDef zone fill:#F1F5F9,stroke:#64748B,color:#0F172A,stroke-width:2px
+
+  class Request,PullRequest artifact
+  class Frame,Deliver,Check zone
+```
+
+## Transversal rules
+
+- Run every step through the skill or agent its zone names, whatever the change's size.
+
+## References
+
+| #   | Reference                               |
+| --- | --------------------------------------- |
+| —   | [Mode](references/mode.md)              |
+| 01  | [Frame](references/01-frame.md)         |
+| 02  | [Deliver](references/02-deliver.md)     |
+| 03  | [Check](references/03-check.md)         |

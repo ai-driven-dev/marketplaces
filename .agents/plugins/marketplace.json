@@ -1,0 +1,116 @@
+{
+  "name": "aidd-framework",
+  "interface": {
+    "displayName": "aidd-framework"
+  },
+  "plugins": [
+    {
+      "name": "aidd-context",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-context"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-dev",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-dev"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-vcs",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-vcs"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-pm",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-pm"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-orchestrator",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-orchestrator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-refine",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-refine"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-ui",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-ui"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-telemetry",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-telemetry"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "aidd-qa",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aidd-qa"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
